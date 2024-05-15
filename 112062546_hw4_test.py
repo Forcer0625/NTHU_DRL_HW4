@@ -121,7 +121,7 @@ class Agent(object):
         obs = self.frame_buffer.get()
         
         self.actor = Actor(obs.shape[0], 22, 1e-4)
-        self.actor.load_state_dict(torch.load('112062546_hw4_data'))
+        self.actor.load_state_dict(torch.load('112062546_hw4_data', map_location=torch.device('cpu')))
 
         self.frame_buffer.clear()
     
